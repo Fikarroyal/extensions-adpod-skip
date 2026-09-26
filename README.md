@@ -1,6 +1,6 @@
 # AdPod Skipper
 
-Extension browser yang menangani hingga 10 iklan berurutan (ad pod). Satu basis kode untuk Chrome, Microsoft Edge, Mozilla Firefox, dan Safari (macOS, iOS, iPadOS).
+Ekstensi peramban yang menangani dan melewati hingga 10 iklan berturut-turut, tersedia untuk Chrome, Microsoft Edge, Mozilla Firefox, dan Safari.
 
 Dokumen ini berisi panduan lengkap: membangun paket, memasang di setiap browser, menguji, sampai merilis ke store.
 
@@ -17,9 +17,6 @@ Dokumen ini berisi panduan lengkap: membangun paket, memasang di setiap browser,
 9. [Rilis ke store](#9-rilis-ke-store)
 10. [Memperbarui dan menyesuaikan](#10-memperbarui-dan-menyesuaikan)
 11. [Pemecahan masalah](#11-pemecahan-masalah)
-12. [Catatan penting](#12-catatan-penting)
-
----
 
 ## 1. Cara kerja
 
@@ -416,14 +413,3 @@ Untuk melihat pesan error:
 - Chrome dan Edge: di kartu extension klik **service worker** (untuk background) atau **Errors**.
 - Firefox: di `about:debugging`, klik **Inspect** pada AdPod Skipper.
 - Safari: menu **Develop**, **Web Extension Background Content**, lalu pilih AdPod Skipper.
-
-## 12. Catatan penting
-
-- Beberapa situs dan platform video melarang penghindaran iklan dalam ketentuan layanannya. Tinjau ketentuan tersebut dan kebijakan store sebelum merilis.
-- Tampilan iklan berubah sewaktu-waktu. Adapter situs dan selektor perlu dirawat dan diuji berkala.
-- Pemblokiran jaringan sengaja tidak menyentuh SDK pemutar seperti Google IMA agar pemutar video tidak rusak. Iklan video ditangani oleh engine di sisi halaman.
-- Banyak situs hidup dari iklan. Gunakan daftar situs dikecualikan untuk situs yang ingin kamu dukung.
-- Semua data tersimpan lokal di perangkat. Extension tidak mengirim data ke server mana pun.
-- Daftar filter yang disertakan berlisensi GPL-3.0 (AdGuard, EasyList) dan lisensi lain. Bila kamu mendistribusikan extension ini, sertakan teks lisensi, sebutkan sumber daftar, dan sediakan kode sumbernya. Periksa sendiri kewajiban lisensinya sebelum rilis.
-- Peringatan `COINMINER_USAGE_DETECTED` pada `addons-linter` Firefox berasal dari nama domain penambang koin di dalam daftar blokir, bukan dari kode yang menambang. Jelaskan hal ini di catatan pengiriman ke Mozilla.
-- Ukuran paket sekitar 3 MB (ruleset di dalamnya dimampatkan saat di-zip, sekitar 24 MB setelah dibuka).
