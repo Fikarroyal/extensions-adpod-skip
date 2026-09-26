@@ -1,0 +1,64 @@
+{
+  "manifest_version": 3,
+  "name": "AdPod Skipper",
+  "version": "1.1.0",
+  "description": "Menangani hingga 10 iklan berurutan secara otomatis: blokir jaringan, sembunyikan slot, lewati iklan video.",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "action": {
+    "default_title": "AdPod Skipper",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": true
+  },
+  "permissions": [
+    "declarativeNetRequest",
+    "declarativeNetRequestFeedback",
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "all_frames": true,
+      "run_at": "document_start",
+      "js": [
+        "shared.js",
+        "content/adapters.js",
+        "content/engine.js",
+        "content/cosmetic.js"
+      ]
+    },
+    {
+      "matches": [
+        "*://*.youtube.com/*",
+        "*://www.youtube-nocookie.com/*"
+      ],
+      "all_frames": true,
+      "run_at": "document_start",
+      "world": "MAIN",
+      "js": [
+        "content/yt-main.js"
+      ]
+    }
+  ]
+}

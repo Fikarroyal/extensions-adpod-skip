@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pengaturan AdPod Skipper</title><link rel="stylesheet" href="../ui.css"></head>
+<body><main class="page">
+  <header><img src="../icons/icon-48.png" width="44" height="44" alt=""><div><h1>Pengaturan</h1><p class="muted">Perubahan tersimpan otomatis.</p></div></header>
+
+  <section class="card">
+    <div class="row"><div><h2>AdPod Skipper aktif</h2><p class="muted">Matikan untuk menghentikan semua penanganan iklan.</p></div>
+      <label class="switch"><input id="enabled" type="checkbox" aria-label="Aktifkan"><span></span></label></div>
+  </section>
+
+  <section class="card">
+    <h2>Lapisan perlindungan</h2>
+    <div class="row"><div><b>Blokir permintaan jaringan</b><p class="muted">Menahan permintaan ke server iklan sebelum dimuat, jadi iklan tidak pernah diunduh.</p></div>
+      <label class="switch"><input id="network" type="checkbox" aria-label="Blokir jaringan"><span></span></label></div>
+    <div class="row"><div><b>Sembunyikan slot iklan</b><p class="muted">Menyembunyikan banner dan kotak iklan yang lolos, berdasarkan daftar selektor.</p></div>
+      <label class="switch"><input id="cosmetic" type="checkbox" aria-label="Sembunyikan slot"><span></span></label></div>
+    <div class="row"><div><b>Lewati iklan video</b><p class="muted">Menekan tombol lewati, atau membisukan dan memajukan iklan ke akhir.</p></div>
+      <label class="switch"><input id="video" type="checkbox" aria-label="Lewati video"><span></span></label></div>
+  </section>
+
+  <section class="card">
+    <div class="row"><div><h2>Batas iklan berurutan</h2><p class="muted">Setelah batas ini, extension berhenti untuk rangkaian tersebut.</p></div>
+      <div class="row"><input id="max" type="range" min="1" max="10" step="1" aria-label="Batas iklan berurutan"><b id="maxv">10</b></div></div>
+  </section>
+
+  <section class="card">
+    <h2>Situs dikecualikan</h2>
+    <p class="muted">Extension tidak akan bekerja di situs berikut, misalnya situs yang ingin kamu dukung.</p>
+    <form id="addf" class="row" style="margin-top:12px"><input id="site" type="text" placeholder="contoh: situsfavorit.com" aria-label="Nama situs"><button class="btn" type="submit">Tambah</button></form>
+    <div id="list" class="chips"></div>
+  </section>
+
+  <section class="card">
+    <div class="row"><div><h2>Statistik</h2><p class="muted" id="stat">-</p></div><button id="reset" class="btn ghost">Reset statistik</button></div>
+  </section>
+
+  <section class="card"><h2>Daftar filter</h2><p class="muted" id="filters">Memuat...</p></section>
+
+  <section class="card"><h2>Privasi</h2>
+    <p class="muted">Semua data (pengaturan dan statistik) hanya disimpan di perangkatmu. AdPod Skipper tidak mengirim data apa pun ke server.</p></section>
+  <div id="toast" class="toast" role="status">Tersimpan</div>
+</main><script src="../shared.js"></script><script src="options.js"></script></body></html>

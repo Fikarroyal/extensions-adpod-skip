@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Uji manual AdPod Skipper</title>
+<style>
+  body{font:16px/1.5 system-ui,sans-serif;max-width:680px;margin:32px auto;padding:0 20px}
+  table{border-collapse:collapse;width:100%} td,th{border-bottom:1px solid #ddd;padding:6px 8px;text-align:left}
+  .ok{color:#0a7d4f;font-weight:600} .no{color:#b45309;font-weight:600}
+  .ad-slot,.ad-wrapper,.ad-container,.top-ad,.sponsored-ad,#banner-ad{background:#ffe9a8;border:2px dashed #c47f00;padding:14px;margin:8px 0;text-align:center}
+</style></head>
+<body>
+  <h1>Uji manual AdPod Skipper</h1>
+  <p>Buka halaman ini lewat server lokal (<code>python3 -m http.server 8000</code>, lalu <code>http://localhost:8000/test/manual-test.html</code>).</p>
+
+  <h2>1. Blokir jaringan</h2>
+  <p>Halaman meminta skrip dari domain iklan sungguhan. Dengan extension aktif, semuanya harus <b>diblokir</b>.</p>
+  <table id="net"><tr><th>Domain</th><th>Hasil</th></tr></table>
+
+  <h2>2. Slot iklan tersembunyi</h2>
+  <p>Enam kotak kuning di bawah harus hilang. Teks biasa tetap tampil.</p>
+  <div class="ad-slot">Kotak iklan .ad-slot</div><div class="ad-wrapper">Kotak iklan .ad-wrapper</div>
+  <div class="ad-container">Kotak iklan .ad-container</div><div class="top-ad">Kotak iklan .top-ad</div>
+  <div class="sponsored-ad">Kotak iklan .sponsored-ad</div><div id="banner-ad">Kotak iklan #banner-ad</div>
+  <p><b>Konten normal ini harus tetap terlihat.</b></p>
+
+  <script>
+    const domains = ['pagead2.googlesyndication.com', 'securepubads.g.doubleclick.net', 'ib.adnxs.com', 'c.amazon-adsystem.com', 'cdn.taboola.com', 'widgets.outbrain.com', 'ads.pubmatic.com', 'cas.criteo.com'];
+    const t = document.getElementById('net');
+    domains.forEach(d => {
+      const row = t.insertRow(); row.insertCell().textContent = d; const cell = row.insertCell(); cell.textContent = 'menunggu...';
+      const s = document.createElement('script'); s.src = 'https://' + d + '/adpod-test.js?' + Date.now();
+      s.onload = () => { cell.textContent = 'dimuat (tidak diblokir)'; cell.className = 'no'; };
+      s.onerror = () => { cell.textContent = 'diblokir'; cell.className = 'ok'; };
+      document.head.appendChild(s);
+    });
+  </script>
+</body></html>

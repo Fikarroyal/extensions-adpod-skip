@@ -1,0 +1,77 @@
+{
+ "updated": "2026-09-21",
+ "dnrPackage": "5.0.20260907123943",
+ "network": [
+  {
+   "id": "base-0",
+   "rules": 10000
+  },
+  {
+   "id": "base-1",
+   "rules": 10000
+  },
+  {
+   "id": "base-2",
+   "rules": 10000
+  },
+  {
+   "id": "base-3",
+   "rules": 10000
+  },
+  {
+   "id": "base-4",
+   "rules": 10000
+  },
+  {
+   "id": "base-5",
+   "rules": 10000
+  },
+  {
+   "id": "base-6",
+   "rules": 10000
+  },
+  {
+   "id": "base-7",
+   "rules": 980
+  },
+  {
+   "id": "extra-0",
+   "rules": 10000
+  },
+  {
+   "id": "extra-1",
+   "rules": 10000
+  },
+  {
+   "id": "extra-2",
+   "rules": 10000
+  },
+  {
+   "id": "extra-3",
+   "rules": 10000
+  },
+  {
+   "id": "extra-4",
+   "rules": 10000
+  },
+  {
+   "id": "extra-5",
+   "rules": 2985
+  }
+ ],
+ "extraSources": {
+  "Jaringan iklan utama": 25,
+  "EasyList ad servers": 48393,
+  "EasyList third-party": 1780,
+  "ABPindo (Indonesia)": 2787
+ },
+ "cosmetic": {
+  "generic": 18330,
+  "always": 291,
+  "domains": 19773,
+  "sources": {
+   "AdGuard Base": 43588,
+   "ABPindo (Indonesia)": 5700
+  }
+ }
+}

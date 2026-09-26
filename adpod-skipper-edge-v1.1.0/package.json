@@ -1,0 +1,10 @@
+{
+  "name": "adpod-skipper",
+  "version": "1.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "update-filters": "node tools/update-filters.mjs"
+  }
+}
