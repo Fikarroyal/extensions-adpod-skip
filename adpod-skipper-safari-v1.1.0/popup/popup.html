@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AdPod Skipper</title><link rel="stylesheet" href="../ui.css"></head>
+<body class="popup">
+  <header class="top">
+    <img src="../icons/icon-48.png" width="36" height="36" alt="">
+    <div><h1>AdPod Skipper</h1><p id="sub" class="muted">Memeriksa…</p></div>
+    <label class="switch" title="Aktifkan atau matikan"><input id="on" type="checkbox" aria-label="Aktifkan AdPod Skipper"><span></span></label>
+  </header>
+  <section class="card hero" id="hero">
+    <div class="meter"><b id="chain">0</b><span>dari <span id="cap">10</span> iklan berurutan</span></div>
+    <div id="segs" class="segs" aria-hidden="true"></div>
+    <p id="state" class="muted"></p>
+  </section>
+  <section class="stats">
+    <div><b id="s-page">0</b><span>Diblokir di sini</span></div>
+    <div><b id="s-today">0</b><span>Dilewati hari ini</span></div>
+    <div><b id="s-total">0</b><span>Dilewati total</span></div>
+  </section>
+  <section class="card row">
+    <div><b id="host">-</b><p class="muted">Jeda di situs ini</p></div>
+    <label class="switch"><input id="pause" type="checkbox" aria-label="Jeda di situs ini"><span></span></label>
+  </section>
+  <section id="perm" class="notice" hidden>
+    <p><b>Izin situs belum diberikan.</b> Tanpa izin ini, extension tidak bisa menangani iklan di halaman.</p>
+    <button id="grant" class="btn">Berikan izin situs</button>
+  </section>
+  <footer><a href="#" id="opts">Pengaturan</a><a href="#" id="guide">Panduan</a><span class="muted" id="ver"></span></footer>
+  <script src="../shared.js"></script><script src="popup.js"></script>
+</body></html>

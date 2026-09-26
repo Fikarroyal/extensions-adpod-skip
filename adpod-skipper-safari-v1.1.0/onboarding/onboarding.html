@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Selamat datang di AdPod Skipper</title><link rel="stylesheet" href="../ui.css"></head>
+<body><main class="page">
+  <header><img src="../icons/icon-48.png" width="44" height="44" alt=""><div><h1>AdPod Skipper sudah terpasang</h1>
+    <p class="muted">Dua langkah singkat supaya semuanya berjalan.</p></div></header>
+  <section class="card">
+    <h2>Izin situs</h2>
+    <p class="muted">Extension perlu membaca halaman untuk mengenali iklan berurutan. Datanya tidak pernah keluar dari perangkatmu.</p>
+    <p style="margin-top:10px">Status: <span id="status" class="status">Memeriksa…</span></p>
+    <button id="grant" class="btn" style="margin-top:10px" hidden>Berikan izin situs</button>
+  </section>
+  <section class="card">
+    <h2 id="btitle">Petunjuk untuk browsermu</h2>
+    <ol id="steps" class="steps"></ol>
+  </section>
+  <section class="card">
+    <h2>Cara kerjanya</h2>
+    <p class="muted">Angka pada ikon menunjukkan berapa iklan berurutan yang sudah ditangani. Setelah mencapai batas (default 10) ikon menampilkan MAX dan kendali kembali kepadamu. Ubah batas di <a href="#" id="opts">Pengaturan</a>.</p>
+  </section>
+</main><script src="../shared.js"></script><script src="onboarding.js"></script></body></html>
